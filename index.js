@@ -6,7 +6,9 @@ const fs = require('fs');
 
 
 // TODO: Create an array of questions for user input
-const questions = [{
+const questions = [
+  
+  {
     type: 'input',
     name: 'title',
     message: 'What is the project title?',
@@ -14,15 +16,21 @@ const questions = [{
 
   {
     type: 'input',
-    name: 'repository',
+    name: 'repo',
     message: 'Enter the repository name:',
+  },
+
+  {
+    type: 'input',
+    name: 'description',
+    message: 'Write a brief description of the project:',
   },
 
   {
     type: 'list',
     message: 'What kind of project it is?',
     name: 'installation',
-    choices: ['Website', 'Node JS', 'Other'],
+    choices: ['Website (HTML/JS/CSS)', 'NodeJS', 'Other'],
   },
 
   {
@@ -33,22 +41,9 @@ const questions = [{
 
   {
     type: 'input',
-    name: 'usage',
-    message: 'Provide instructions on how to use your project?',
-  },
-
-  {
-    type: 'input',
     name: 'test',
-    message: 'Write a test plan for your project?',
+    message: 'Write a test case for your project?',
   },
-
-  // {
-  //   type: 'checkbox', //changr
-  //   message: 'What languages do you know?',
-  //   name: 'stack',
-  //   choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-  // },
 
 {
   type: 'input',
@@ -63,11 +58,13 @@ const questions = [{
   },
 
 {
-    type: 'list', //change
-    message: 'Select licence type?',
-    name: 'contact',
-    choices: ['MIT', 'phone', 'telekinesis'],
-  },];
+    type: 'list',
+    message: 'Select license type?',
+    name: 'license',
+    choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0','The Unlicense', 'No License'],
+  }
+
+];
 
 
 // TODO: Create a function to write README file
@@ -89,7 +86,7 @@ function init() {
     .then((data) => {
         // let dataString = JSON.stringify(data);
         writeToFile('filename', genMarkdown.generateMarkdown(data));
-        console.log(genMarkdown.generateMarkdown('test'));    
+        console.log(genMarkdown.generateMarkdown(data));    
     });
 
 }
