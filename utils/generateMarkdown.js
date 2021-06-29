@@ -34,11 +34,32 @@ else{
 return licenseText;
 }
 
-// Function
+// Function to get current year text
 function getYear(){
   var date = new Date();
   var n = date.getFullYear();
   return n;
+}
+
+// Function to render test text
+function renderTest(data){
+  let testInfo='No test was written for this application/software.'
+  if (data.test==='Yes'){
+
+    testInfo=`
+
+    To run the software test, complete the following:
+
+  1. Run \u0060\u0060\u0060npm install\u0060\u0060\u0060 in your console. This step shall be done only once.
+
+  2. Run \u0060\u0060\u0060npm run test\u0060\u0060\u0060 in your console.
+    
+  The test script can be found at the test folder: https://github.com/${data.username}/${data.repo}/tree/main/test.
+    
+    `;
+    
+  }
+  return testInfo;
 }
 
 
@@ -120,7 +141,7 @@ function renderInstallation(data){
  
   * Repository link on GitHub website: https://github.com/${data.username}/${data.repo}
 
-  2. Double click on the index.html file to open the website. The website will open on your default web browser. If the webpage does not function as expected, verify that JavaScript is enabled in your web browser.
+  2. Double click on the \u0060\u0060\u0060index.html\u0060\u0060\u0060 file to open the website. The website will open on your default web browser. If the webpage does not function as expected, verify that JavaScript is enabled in your web browser.
 
   Or
 
@@ -240,7 +261,7 @@ The installation can be completed by following these instructions:
 ## Tests
 ***
   
-  ${data.test}
+  ${renderTest(data)}
 
 
 ## Questions
