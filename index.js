@@ -40,9 +40,10 @@ const questions = [
   },
 
   {
-    type: 'input',
+    type: 'list',
     name: 'test',
-    message: 'Write a test case for your project?',
+    message: 'Does you project has a test script?',
+    choices:['Yes','No'],
   },
 
 {
@@ -71,7 +72,7 @@ const questions = [
 
 function writeToFile(fileName, data) {
 
-    fs.writeFile('text.md', data, (error) =>
+    fs.writeFile('READ-ME.md', data, (error) =>
         error ? console.error(`Error: ${error}`) : console.log('File has been created.')
     );
 
