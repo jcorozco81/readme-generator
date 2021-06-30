@@ -73,7 +73,7 @@ const questions = [
 function writeToFile(fileName, data) {
 
     fs.writeFile('READ-ME.md', data, (error) =>
-        error ? console.error(`Error: ${error}`) : console.log('File has been created.')
+        error ? console.error(`Error: ${error}`) : console.log(`Read Me file has been created.`)
     );
 
 }
@@ -87,7 +87,7 @@ function init() {
     .then((data) => {
         // let dataString = JSON.stringify(data);
         writeToFile('filename', genMarkdown.generateMarkdown(data));
-        console.log(genMarkdown.generateMarkdown(data));    
+        // console.log(genMarkdown.generateMarkdown(data));    //Debug
     });
 
 }
