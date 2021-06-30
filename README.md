@@ -49,7 +49,9 @@ Additional packages required: [Inquirer package](https://www.npmjs.com/package/i
 
    2. A series of questions will be displayed, all the answers will be used to generate the Read me file. If the file is successfully created it will return a message indicating that the file was created. The filename of the file created is ```READ-ME.md``` and it will be created in the same folder where the ```index.js``` script was executed.
 
-      ![Image Questions Screenschot](./assets/images/readme-generator-questions.PNG)
+         ![Demo GIF File](./assets/gif/demo-readme-generator-gif.gif)
+
+* A video with a demo of the script of the script can be obtained here: https://drive.google.com/drive/folders/1UIdp2heSz_x1nhrXCnXC2uofU04JAywf?usp=sharing
   
 
 
